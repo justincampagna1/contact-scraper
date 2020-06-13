@@ -69,13 +69,8 @@ Json objects are stored in the following format
 ```
 ## **Validation**
 - Emails are validated against modern specs with the [email_validator library](https://github.com/JoshData/python-email-validator "email_validator library")
-- Phone numbers are validated by [region](https://github.com/daviddrysdale/python-phonenumbers/tree/dev/python/phonenumbers/shortdata "region") using the [Python implementation](https://github.com/daviddrysdale/python-phonenumbers "Python implementation") of [Google\'s libphonenumber library](https://github.com/google/libphonenumber)
-
-## **Issues**
-- This library is actively maintained as of 6/13/2020
-- If you have suggestions for improvements please make an issue and contributions are welcomed.
-
+- Phone numbers are validated by [region](https://github.com/daviddrysdale/python-phonenumbers/tree/dev/python/phonenumbers/shortdata "region") using the [Python implementation](https://github.com/daviddrysdale/python-phonenumbers "Python implementation") of [Google\'s libphonenumber library](https://github.com/google/libphonenumber "Google\'s libphonenumber library")
 
 
 ## **Custom integration**
-If you\'d like contact-scraper implemented into an existing system, please contact me.
+If you\'d like contact-scraper implemented into an existing system, please [contact me](https://github.com/enjoys-sashimi "contact me").
