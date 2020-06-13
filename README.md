@@ -29,7 +29,6 @@ Reults get written as a list of JSON objects in output.json
 #### Print Results
 ```python
 import json
-import pprint as pprint
 
 with open('output.json', 'r') as raw_output:
     data = raw_output.read()
@@ -38,7 +37,8 @@ with open('output.json', 'r') as raw_output:
 print(json.dumps(output, indent=2))
 ```
 Json objects are stored in the following format
->[
+```python
+[
   {
     "url": "https://www.python.org/privacy/",
     "emails": [
@@ -54,6 +54,7 @@ Json objects are stored in the following format
     ]
   }
  ]
+```
 
 
 ## **Validation**
