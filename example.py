@@ -1,11 +1,11 @@
 from contactscraper.controller import Controller
 
 
-instance = Controller(starting_urls=['https://losangeles.craigslist.org/d/apts-housing-for-rent/search/apa'], 
+instance = Controller(starting_urls=['https://www.python.org/'], 
                        scrape_numbers=True,
                        scrape_emails=True,
                        region="US",
-                       max_results=10)
+                       max_results=5)
 
 instance.scrape()
 
