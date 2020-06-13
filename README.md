@@ -1,4 +1,5 @@
-## **contact-scraper**
+[![Version](https://img.shields.io/badge/Version-1.0.0-brightgreen)]() [![Contributions](https://img.shields.io/badge/Contributions-Welcome-blue)]() [![Release](https://img.shields.io/badge/Release-Stable-green)]() [![Maintained](https://img.shields.io/badge/Maintenance-Active-brightgreen)]() 
+# contact-scraper 
 
 contact-scraper gathers and validates all available phone numbers and emails from a given domain by recursively travesing and scraping the entire site-map. Built upon Scrapy.
 
@@ -70,7 +71,7 @@ Json objects are stored in the following format
 - Emails are validated against modern specs with the [email_validator library](https://github.com/JoshData/python-email-validator "email_validator library")
 - Phone numbers are validated by [region](https://github.com/daviddrysdale/python-phonenumbers/tree/dev/python/phonenumbers/shortdata "region") using the [Python implementation](https://github.com/daviddrysdale/python-phonenumbers "Python implementation") of [Google\'s libphonenumber library](https://github.com/google/libphonenumber)
 
-## **Contribution**
+## **Issues**
 - This library is actively maintained as of 6/13/2020
 - If you have suggestions for improvements please make an issue and contributions are welcomed.
 
