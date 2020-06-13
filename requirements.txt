@@ -1,0 +1,6 @@
+PyDispatcher == 2.0.5
+Scrapy == 2.1.0
+Twisted == 20.3.0
+email_validator == 1.1.1
+phonenumbers == 8.12.5
+tldextract == 2.2.2

@@ -105,8 +105,8 @@ class ContactSpider(CrawlSpider):
                 self.seen_urls.add(response.url)
                 yield contact_info
             
-            logging.info(f"{self.total_results}, {len(self.seen_urls)}, {self.max_results}")
-            if len(self.seen_urls) >= self.max_results:
+            logging.info(f"found {self.total_results}/{self.max_results} results")
+            if self.total_results >= self.max_results:
                 raise CloseSpider('Reached max results')
         
         

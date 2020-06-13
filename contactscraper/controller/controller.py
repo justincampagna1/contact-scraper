@@ -18,11 +18,9 @@ import tldextract
 class Controller:
     def __init__(self, starting_urls, scrape_numbers=True, scrape_emails=True, region="US", max_results=False):
         
-
-
         #Init logging
         start_time = datetime.now().timestamp()
-        logging.basicConfig(filename=f'.\logs\{start_time}.log',level=logging.DEBUG)
+        logging.basicConfig(filename=f'.\logs\{start_time}.log',level=logging.INFO)
         logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
 
         #Init project with scrapy settings
