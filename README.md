@@ -10,6 +10,7 @@ This tool is for educational and/or legal scraping purposes only, usage of conta
 1. `git clone git@github.com:enjoys-sashimi/contact-scraper.git`
 2. `cd contact-scraper`
 3. `pip install -r requirements.txt`
+***For a more detailed setup guide read here(https://medium.com/@sahharkt/scraping-websites-for-phone-numbers-and-emails-with-python-5557fcfa1596)***
 
 ## **Usage**
 ***For quick startup edit/run [example.py](https://github.com/enjoys-sashimi/contact-scraper/blob/master/example.py)***
