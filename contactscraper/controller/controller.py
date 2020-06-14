@@ -1,22 +1,30 @@
-from scrapy.utils.project import get_project_settings
+#scrapy
 import scrapy
-import re
-import logging
-
 from scrapy.crawler import CrawlerRunner
 from scrapy.utils.log import configure_logging
-from twisted.internet import reactor, defer
-from scrapy.exceptions import CloseSpider
-from contactscraper.spiders.contactspider import ContactSpider
 from scrapy.settings import Settings
 from scrapy.utils.project import get_project_settings
+from scrapy.exceptions import CloseSpider
+
+#Local imports
+from contactscraper.spiders.contactspider import ContactSpider
+
+#std packages
+import re
+import logging
 import os
 from datetime import datetime, timezone, timedelta
 import sys
+
+#Twisted
+from twisted.internet import reactor, defer
+
+#tld
 import tldextract
 
 class Controller:
     def __init__(self, starting_urls, scrape_numbers=True, scrape_emails=True, region="US", max_results=False):
+
         
         #Init logging
         start_time = datetime.now().timestamp()
@@ -42,29 +50,24 @@ class Controller:
     def scrape(self):
         '''
         * * * * *
-        * Linearly spins up instances of MailSpider for each tld in tld_documents
+        * Linearly spins up instances of Contact-Spider for each url in starting_urls
         * This function ensures atomicity between MailSpiders by spinning up a Twisted Reactor and using deferred callbacks.
         *
         * see: https://twistedmatrix.com/documents/current/api/twisted.internet.reactor.html
         * and: https://twistedmatrix.com/documents/current/api/twisted.internet.defer.inlineCallbacks.html
         * * * * *
-        * @param List<Tld> tld_documents : a list of Tld documents
-        * @param Bool call_controller : used to indicate the call was made by the controller, and after we've finished scanning all the tlds we should go back to the controller
+        * @param self : current instance of Controller
         * @return void
         * * * * *
         '''
-        # #Instiate an instance of the CrawlerRunner class from scrapy
+        
         runner = CrawlerRunner(self.settings)
-
-        # #Relinquish ContentCops control of stdout | log files will continue to write
         configure_logging()
 
 
 
         @defer.inlineCallbacks
         def crawl(starting_urls):
-            #using our CrawlerRunner, instiate a new mail_spider for each tld
-            #see MailSpider.py for the actual spider that's running inside CrawlerRunner
             for starting_url in starting_urls:
                 ext = tldextract.extract(starting_url)
                 root = '.'.join(ext[2:])
@@ -83,9 +86,7 @@ class Controller:
                     logging.warning(f"FATAL: NEW MAIL-SPIDER FAILED TO LAUNCH\n\t{str(e)}")
             reactor.stop()
         
-        #Start recursively spinning up spiders
-        crawl(self.starting_urls)
         
-        # Start a Twisted Reactor, 
-        # this will lock all threads until the last call to crawl is finished
+        crawl(self.starting_urls)
+
         reactor.run() 

@@ -11,7 +11,7 @@ from email_validator import validate_email, EmailNotValidError
 from datetime import datetime, timezone
 from contactscraper.items import ContactInfo
 import phonenumbers as pn
-# from phonenumbers import PhoneNumberMatcher, format_number, is_valid_number, parse, PhoneNumberFormat
+
 
 
 class ContactSpider(CrawlSpider):
@@ -27,7 +27,8 @@ class ContactSpider(CrawlSpider):
     def __init__(self, root=None, start_urls=[], allowed_domains=[], region='US', scrape_emails=True, scrape_numbers=True, max_results=False, **kwargs):
         '''
         * * * * * * 
-        * Initilize the spider
+        * Initilize the spider with Controller attributes
+        *
         * * * * * * 
         * @param <String> root       : the top level domain to start from
         *
@@ -63,15 +64,11 @@ class ContactSpider(CrawlSpider):
         '''
         * * * * * * 
         * Uses regex to broad scrape the entierty of the HTML for numbers and emails
-        * on the current web page, if it finds any emails or phone numbers
+        * on the current web page, if any emails or phone numbers exist
         * they will be passed down the item pipeline for further validation.
         * * * * * * 
-        * @param <Response> response     : the current page we're on
-        * @yield ContactInfo             : scrapy Item class with emails, numbers, and urls
-        *
-        * I will depreciate the return value, this is from before I implemented sys wide logging.
-        * They don't hurt anything, the return value of parse item does nothing but go to stdout
-        * Not making changes to any codebase while writing the docs atm
+        * @param <Response> response     : Scrapy Response object from the newest page
+        * @yield ContactInfo             : scrapy Item class with emails, numbers, and url
         */
         '''
 
@@ -84,8 +81,7 @@ class ContactSpider(CrawlSpider):
         potential_emails = re.findall('\w+@\w+\.{1}\w+', html_text)
 
         if response.url not in self.seen_urls and \
-                (len(potential_numbers) != 0 or \
-                    len(potential_emails) != 0):
+                (len(potential_numbers) != 0 or len(potential_emails) != 0):
 
             if self.scrape_emails:
                 contact_info['emails'] = potential_emails
