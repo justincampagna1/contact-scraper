@@ -50,8 +50,8 @@ class Controller:
     def scrape(self):
         '''
         * * * * *
-        * Linearly spins up instances of Contact-Spider for each url in starting_urls
-        * This function ensures atomicity between MailSpiders by spinning up a Twisted Reactor and using deferred callbacks.
+        * Linearly spins up instances of ContactSpider for each url in starting_urls
+        * This function ensures atomicity between ContactSpiders by spinning up a Twisted Reactor and using deferred callbacks.
         *
         * see: https://twistedmatrix.com/documents/current/api/twisted.internet.reactor.html
         * and: https://twistedmatrix.com/documents/current/api/twisted.internet.defer.inlineCallbacks.html
