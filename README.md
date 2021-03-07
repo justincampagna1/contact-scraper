@@ -1,4 +1,4 @@
-[![Version](https://img.shields.io/badge/Version-1.0.0-brightgreen)]() [![Contributions](https://img.shields.io/badge/Contributions-Welcome-blue)]() [![Release](https://img.shields.io/badge/Release-Stable-green)]() [![Maintained](https://img.shields.io/badge/Maintenance-Active-brightgreen)]() 
+[![Version](https://img.shields.io/badge/Version-1.0.0-brightgreen)]() [![Contributions](https://img.shields.io/badge/Contributions-Welcome-blue)]() [![Release](https://img.shields.io/badge/Release-Stable-green)]()
 # contact-scraper 
 
 contact-scraper gathers and validates all available phone numbers and emails from a given domain by recursively travesing and scraping the entire site-map. Built upon Scrapy.
