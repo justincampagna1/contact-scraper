@@ -1,11 +1,11 @@
 [![Version](https://img.shields.io/badge/Version-1.0.0-brightgreen)]() [![Contributions](https://img.shields.io/badge/Contributions-Welcome-blue)]() [![Release](https://img.shields.io/badge/Release-Stable-green)]()
-# notice of maintainence
-hi - unfortunately I can't contribute to this repo, or any open source project anymore. my employeer forbids it.
-have a good day.
+
 
 # contact-scraper 
 
 contact-scraper gathers and validates all available phone numbers and emails from a given domain by recursively travesing and scraping the entire site-map. Built upon Scrapy.
+
+note: this repository is not under active maintenance 
 
 ## **Installation**
 1. `git clone git@github.com:enjoys-sashimi/contact-scraper.git`
