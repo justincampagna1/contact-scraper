@@ -7,11 +7,13 @@ import phonenumbers as pn
 from email_validator import validate_email, EmailNotValidError
 import json
 from scrapy.exceptions import DropItem, CloseSpider
+import uuid
 
 class ContactscraperPipeline:
 
     def open_spider(self, spider):
-        self.file = open('output.json', 'w')
+        f_name = uuid.uuid1() + "-output.json"
+        self.file = open(f_name, 'w')
         self.emails = set()
         self.numbers = set()
         self.url_map = {}
