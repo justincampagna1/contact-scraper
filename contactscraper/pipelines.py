@@ -47,6 +47,7 @@ class ContactscraperPipeline:
 
         for email in emails:
             try:
+                email = email.replace(" ","")
                 valid = validate_email(email)
                 ascii_email = valid.ascii_email
                 known_emails = self.url_map[url]['emails']
