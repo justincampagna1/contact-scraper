@@ -1,20 +1,19 @@
-[![Version](https://img.shields.io/badge/Version-1.0.0-brightgreen)]() [![Contributions](https://img.shields.io/badge/Contributions-Welcome-blue)]() [![Release](https://img.shields.io/badge/Release-Stable-green)]() [![Maintained](https://img.shields.io/badge/Maintenance-Active-brightgreen)]() 
+[![Version](https://img.shields.io/badge/Version-1.0.0-brightgreen)]() [![Contributions](https://img.shields.io/badge/Contributions-Welcome-blue)]()
+
+
 # contact-scraper 
 
 contact-scraper gathers and validates all available phone numbers and emails from a given domain by recursively travesing and scraping the entire site-map. Built upon Scrapy.
 
-## **Disclaimer**
-This tool is for educational and/or legal scraping purposes only, usage of contact-scraper for scraping targets without prior mutual consent is illegal. Developers of contact-scraper and its dependencies assume no liability and are not responsible for any misuse or damage caused by this program.
+note: this repository is not under active maintenance 
 
 ## **Installation**
 1. `git clone git@github.com:enjoys-sashimi/contact-scraper.git`
 2. `cd contact-scraper`
 3. `pip install -r requirements.txt`
 
-
 ## **Usage**
 ***For quick startup edit/run [example.py](https://github.com/enjoys-sashimi/contact-scraper/blob/master/example.py)***
-
 
 #### Scan a URL
 
@@ -75,3 +74,5 @@ Json objects are stored in the following format
 
 ## **Custom integration**
 If you\'d like contact-scraper implemented into an existing system, please [contact me](https://github.com/enjoys-sashimi "contact me").
+
+This tool is for educational and/or legal scraping purposes only, usage of contact-scraper for scraping targets without prior mutual consent is illegal. Developers of contact-scraper and its dependencies assume no liability and are not responsible for any misuse or damage caused by this program.
