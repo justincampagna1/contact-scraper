@@ -78,7 +78,7 @@ class ContactSpider(CrawlSpider):
         html_text = str(response.text)
 
         potential_numbers = [pn.format_number(match.number, pn.PhoneNumberFormat.E164) for match in pn.PhoneNumberMatcher(html_text, self.region)]
-        potential_emails = re.findall('([a-zA-Z0-9]+(?:[._-][a-zA0-9]+)*)@([a-zA-Z0-9]+(?:[.-][a-zA-Z0-9]+)*\.[a-zA-Z]{2,})', html_text)
+        potential_emails = re.findall('([a-zA-Z0-9]+(?:[._-][a-zA-Z0-9]+)*)@([a-zA-Z0-9]+(?:[.-][a-zA-Z0-9]+)*\.[a-zA-Z]{2,})', html_text)
 
         if response.url not in self.seen_urls and \
                 (len(potential_numbers) != 0 or len(potential_emails) != 0):
